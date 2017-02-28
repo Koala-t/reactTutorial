@@ -74,6 +74,10 @@ class Game extends React.Component {
     });
   }
 
+  makeActive(currentMove) {
+    return currentMove === this.state.stepNumber ? 'active' : 'standby';
+  }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -82,7 +86,7 @@ class Game extends React.Component {
       const desc = move ? 'Move #' + move : 'Game start';
       return (
         <li key={move} >
-          <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+          <a href="#" className={ this.makeActive(move) } onClick={() => this.jumpTo(move)}>{desc}</a>
         </li>
       );
     });

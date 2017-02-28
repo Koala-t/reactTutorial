@@ -54,3 +54,7 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+
+.active {
+  color: red;
+}
