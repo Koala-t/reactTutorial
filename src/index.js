@@ -74,6 +74,10 @@ class Game extends React.Component {
     });
   }
 
+  makeActive(currentMove) {
+    return currentMove === this.state.stepNumber ? 'active' : 'standby';
+  }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -82,7 +86,7 @@ class Game extends React.Component {
       const desc = move ? 'Move #' + move : 'Game start';
       return (
         <li key={move} >
-          <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+          <a href="#" className={ this.makeActive(move) } onClick={() => this.jumpTo(move)}>{desc}</a>
         </li>
       );
     });
@@ -114,7 +118,14 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <div>
+    <div className="introduction">
+      <h1>Tic Tac Toe</h1>
+      <h3>Begin the game by clicking on a square</h3>
+      <h3>Replay from a specific move by clicking on the move list</h3>
+    </div>
+    <Game />
+  </div>,
   document.getElementById('container')
 );
 
