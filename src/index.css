@@ -6,7 +6,8 @@ body {
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  margin: 50px;
+  background: #255C69;
 }
 
 ol, ul {
@@ -51,11 +52,21 @@ ol, ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 15%;
+  background: #AA8739;
 }
 
-.game-info {
-  margin-left: 20px;
+.game-info, .game-board {
+  margin: 20px;
+}
+
+.introduction {
+  background: #AA4639;
+  padding: 20px;
+  margin-top: 10%;
+}
+
+.introduction > * {
+  text-align: center;
 }
 
 .active {

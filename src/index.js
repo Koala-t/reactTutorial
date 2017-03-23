@@ -118,7 +118,14 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <div>
+    <div className="introduction">
+      <h1>Tic Tac Toe</h1>
+      <h3>Begin the game by clicking on a square</h3>
+      <h3>Replay from a specific move by clicking on the move list</h3>
+    </div>
+    <Game />
+  </div>,
   document.getElementById('container')
 );
 
